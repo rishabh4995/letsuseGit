@@ -1,4 +1,4 @@
-source ./scripts/config.sh
+source config.sh
 
 execute() {
   $@ || exit
