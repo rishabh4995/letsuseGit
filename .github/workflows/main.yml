@@ -11,7 +11,9 @@ on:
       - main
       - 'feature/*'
       - 'bugfix/*'
-  
+      
+env:
+  DEV_HUB_URL: force://PlatformCLI::5Aep861mdLLi91HqFe_H9mH_jIScAOIOk6c0pLcjrIyKBY98Dcn8b7A9w8gvRnSh1POOBNZsape0HOFcmaBBr4k@deloitte486-dev-ed.my.salesforce.com
 
   # Allows you to run this workflow manually from the Actions tab
 
@@ -23,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
-          env:
-            DEV_HUB_URL: force://PlatformCLI::5Aep861mdLLi91HqFe_H9mH_jIScAOIOk6c0pLcjrIyKBY98Dcn8b7A9w8gvRnSh1POOBNZsape0HOFcmaBBr4k@deloitte486-dev-ed.my.salesforce.com
         - run: | 
               echo ${{ secrets.DEV_HUB_URL }}
               echo $DEV_HUB_URL
+              echo 1
               echo $DEV_HUB_URL > devHubURLFile
+              echo 2
              
