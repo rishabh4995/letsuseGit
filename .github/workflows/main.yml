@@ -29,6 +29,6 @@ jobs:
               echo force://PlatformCLI::5Aep861mdLLi91HqFe_H9mH_jIScAOIOk6c0pLcjrIyKBY98Dcn8b7A9w8gvRnSh1POOBNZsape0HOFcmaBBr4k@deloitte486-dev-ed.my.salesforce.com > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
-              chmod +x /${{ github.workspace }}/scripts/CreateScratchOrg.sh
+              chmod +x ${{ github.workspace }}/scripts/CreateScratchOrg.sh
               sh ${{ github.workspace }}/scripts/CreateScratchOrg.sh
              
