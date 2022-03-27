@@ -1,4 +1,4 @@
-source `dirname $0`/config.sh
+source `./scripts/config.sh'
 
 execute() {
   $@ || exit
@@ -6,6 +6,9 @@ execute() {
 echo "1 in sh file"
 echo $DEV_HUB_URL
 echo "2"
+echo "3"
+echo $SCRATCH_ORG_ALIAS
+echo "4"
 
 if [  $DEV_HUB_URL ]; then
   echo "set default devhub user"
