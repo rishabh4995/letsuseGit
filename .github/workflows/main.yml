@@ -26,6 +26,8 @@ jobs:
           env:
             DEV_HUB_URL: ${{ secrets.DEV_HUB_URL }}
         - run: | 
+              echo ${{ secrets.DEV_HUB_URL }}
+              echo $DEV_HUB_URL
               echo $DEV_HUB_URL > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
