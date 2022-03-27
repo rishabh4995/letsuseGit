@@ -24,6 +24,9 @@ jobs:
   deploy-org:
     runs-on: ubuntu-latest
     container : salesforce/salesforcedx:latest-full
+    defaults:
+      run:
+        shell: sh
     steps:
         - uses: actions/checkout@v2
         - run: | 
@@ -35,6 +38,6 @@ jobs:
               echo 2
               chmod +x ./scripts/CreateScratchOrg.sh
               ./scripts/CreateScratchOrg.sh
-        - shell: sh
+      
        
        
