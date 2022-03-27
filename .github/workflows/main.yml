@@ -35,5 +35,6 @@ jobs:
               echo 2
               chmod +x ./scripts/CreateScratchOrg.sh
               ./scripts/CreateScratchOrg.sh
+        - shell: sh
        
        
