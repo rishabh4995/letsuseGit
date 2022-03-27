@@ -34,5 +34,5 @@ jobs:
               echo $pwd
               echo 2
               chmod +x ./scripts/CreateScratchOrg.sh
-              sh ${{ github.workspace }}/scripts/CreateScratchOrg.sh
+              ./scripts/CreateScratchOrg.sh
              
