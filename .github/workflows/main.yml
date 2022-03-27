@@ -4,16 +4,18 @@ name:  deployToScratchOrg
 # Controls when the workflow will run
 on:
   # Triggers the workflow on pull request events but only for the main branch
+  workflow_dispatch:
+  
   pull_request:
     branches: 
       - main
       - 'feature/*'
       - 'bugfix/*'
+  
 
   # Allows you to run this workflow manually from the Actions tab
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-workflow_dispatch
 
 jobs:
   deploy-org:
