@@ -3,7 +3,9 @@ source `dirname $0`/config.sh
 execute() {
   $@ || exit
 }
-
+echo "1"
+echo "$DEV_HUB_URL"
+echo "2"
 if [ -z "$DEV_HUB_URL" ]; then
   echo "set default devhub user"
   execute sfdx force:config:set defaultdevhubusername=$DEV_HUB_ALIAS
