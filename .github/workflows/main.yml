@@ -2,10 +2,7 @@
 
 name:  deployToScratchOrg
 # Controls when the workflow will run
-defaults:
-  run:
-    working-directory: ./letsuseGit
-    
+
 on:
   # Triggers the workflow on pull request events but only for the main branch
   workflow_dispatch:
@@ -33,7 +30,9 @@ jobs:
               echo force://PlatformCLI::5Aep861mdLLi91HqFe_H9mH_jIScAOIOk6c0pLcjrIyKBY98Dcn8b7A9w8gvRnSh1POOBNZsape0HOFcmaBBr4k@deloitte486-dev-ed.my.salesforce.com > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
+              echo 1
               echo $pwd
+              echo 2
               chmod +x ./scripts/CreateScratchOrg.sh
               sh ${{ github.workspace }}/scripts/CreateScratchOrg.sh
              
