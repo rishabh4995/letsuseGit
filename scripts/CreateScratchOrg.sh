@@ -7,7 +7,7 @@ echo "1 in sh file"
 echo $DEV_HUB_URL
 echo "2"
 
-if [ -z $DEV_HUB_URL ]; then
+if [  $DEV_HUB_URL ]; then
   echo "set default devhub user"
   execute sfdx force:config:set defaultdevhubusername=$DEV_HUB_ALIAS
 
