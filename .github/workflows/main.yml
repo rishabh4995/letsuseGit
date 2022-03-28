@@ -14,7 +14,7 @@ on:
       - 'bugfix/*'
       
 env:
-  DEV_HUB_URL: "force://PlatformCLI::5Aep861mdLLi91HqFcAEF7Il08vCce3_hZWIrFrRAg1XOoKDgDGm5h1fU.nfWL9oAX5qvk5jsKFdhK0IkYCehSV@deloitte-2f2-dev-ed.my.salesforce.com"
+  DEV_HUB_URLlocal: ${{ secrets.DEV_HUB_URL }}
 
   # Allows you to run this workflow manually from the Actions tab
 
@@ -30,7 +30,7 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - run: | 
-              echo force://PlatformCLI::5Aep861mdLLi91HqFcAEF7Il08vCce3_hZWIrFrRAg1XOoKDgDGm5h1fU.nfWL9oAX5qvk5jsKFdhK0IkYCehSV@deloitte-2f2-dev-ed.my.salesforce.com > devHubURLFile
+              echo $DEV_HUB_URLlocal > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
               echo 1
@@ -39,6 +39,3 @@ jobs:
               chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh
               ./scripts/CreateScratchOrg.sh
-      
-       
-       
