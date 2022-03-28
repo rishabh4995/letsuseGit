@@ -22,6 +22,8 @@ fi
 echo "Creating scratch ORG..."
 execute sfdx force:org:create -a $SCRATCH_ORG_ALIAS -s -f ./config/project-scratch-def.json -d 7
 
+sfdx force:org:list --all
+
 echo "Pushing changes to scratch org..."
 execute sfdx force:source:push
 
