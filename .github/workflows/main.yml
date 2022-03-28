@@ -36,6 +36,7 @@ jobs:
               echo 1
               echo $pwd
               echo 2
+              chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh
               ./scripts/CreateScratchOrg.sh
       
