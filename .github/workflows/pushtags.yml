@@ -13,8 +13,8 @@ on:
       - release-*
 
 env:
-  DEV_HUB_URL: "force://PlatformCLI::5Aep861mdLLi91HqFcAEF7Il08vCce3_hZWIrFrRAg1XOoKDgDGm5h1fU.nfWL9oAX5qvk5jsKFdhK0IkYCehSV@deloitte-2f2-dev-ed.my.salesforce.com"
-  QA_URL: "force://PlatformCLI::5Aep861mdLLi91HqFcAEF7Il08vCce3_hZWIrFrRAg1XOoKDgDGm5h1fU.nfWL9oAX5qvk5jsKFdhK0IkYCehSV@deloitte-2f2-dev-ed.my.salesforce.com"
+  DEV_HUB_URL: ${{ secrets.DEV_HUB_URL }}
+  QA_URL: ${{ secrets.QA_URL }}
   # Allows you to run this workflow manually from the Actions tab
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
