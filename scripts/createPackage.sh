@@ -11,7 +11,7 @@ if [ "$QA_URL" ]; then
   sfdx force:auth:sfdxurl:store -f qaURLFile -a $QA_ORG_ALIAS
   rm qaURLFile
 fi
-
+execute sfdx force:package:create -n $PACKAGENAME -t Unlocked -r force-app
 echo "creating package version...."
 PACKAGE_VERSION="$(execute sfdx force:package:version:create --package $PACKAGENAME --installationkeybypass --wait 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
 echo $PACKAGE_VERSION
