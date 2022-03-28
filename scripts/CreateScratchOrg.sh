@@ -1,4 +1,4 @@
-source config.sh
+source `dirname $0`/config.sh
 
 execute() {
   $@ || exit
