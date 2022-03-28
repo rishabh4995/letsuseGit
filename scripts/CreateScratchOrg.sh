@@ -10,7 +10,7 @@ echo "3"
 echo $SCRATCH_ORG_ALIAS
 echo "4"
 
-if [  $DEV_HUB_URL ]; then
+if [ -z $DEV_HUB_URL ]; then
   echo "set default devhub user"
   execute sfdx force:config:set defaultdevhubusername=$DEV_HUB_ALIAS
 
