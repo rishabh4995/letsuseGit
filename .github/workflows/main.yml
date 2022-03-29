@@ -28,12 +28,12 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
         - name: Authorize Dev Hub
-        - run: |
+          run: |
               echo $DEV_HUB_URLlocal > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
         - name: trigger build
-        - run: | 
+          run: | 
               createordelete= 'false'
               chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh "${createordelete}"
