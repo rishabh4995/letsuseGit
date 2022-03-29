@@ -34,6 +34,7 @@ jobs:
               rm devHubURLFile
         - name: trigger build
         - run: | 
+              createordelete= 'false'
               chmod +x ./scripts/config.sh
-              chmod +x ./scripts/CreateScratchOrg.sh
+              chmod +x ./scripts/CreateScratchOrg.sh "${createordelete}"
               ./scripts/CreateScratchOrg.sh
