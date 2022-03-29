@@ -38,6 +38,6 @@ jobs:
               deleteorcreate= true
               chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh
-              ./scripts/CreateScratchOrg.sh "${deleteorcreate}"
+              ./scripts/CreateScratchOrg.sh ${deleteorcreate}
               deleteorcreate = true
-              ./scripts/CreateScratchOrg.sh "${deleteorcreate}"
+              ./scripts/CreateScratchOrg.sh ${deleteorcreate}
