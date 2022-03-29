@@ -24,9 +24,6 @@ jobs:
   deploy-org:
     runs-on: ubuntu-latest
     container : salesforce/salesforcedx:latest-full
-    defaults:
-      run:
-        shell: bash
     steps:
         - name: Checkout
           uses: actions/checkout@v2
