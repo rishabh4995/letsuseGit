@@ -23,13 +23,13 @@ jobs:
       container : salesforce/salesforcedx:latest-full
       steps:
         - name: Checkout
-        - uses: actions/checkout@v2
+          uses: actions/checkout@v2
         - name: Authorize Dev Hub
-        - run: |
+          run: |
               echo $DEV_HUB_URL > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
         - name: Create Package
-        - run: | 
+          run: | 
               chmod +x ./scripts/createPackage.sh
               ./scripts/createPackage.sh
