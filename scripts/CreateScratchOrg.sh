@@ -4,13 +4,6 @@ execute() {
   $@ || exit
 }
 
-echo "1 in sh file $1"
-echo $DEV_HUB_URLlocal
-echo "2"
-echo "3"
-echo $SCRATCH_ORG_ALIAS
-echo "4"
-
 if [ "$1" = "true" ]; then
   echo "Deleting Scratch Org after Usage"
   sfdx force:org:delete -p -u $SCRATCH_ORG_ALIAS
