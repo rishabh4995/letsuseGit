@@ -4,7 +4,7 @@ execute() {
   $@ || exit
 }
 
-echo "1 in sh file"
+echo "1 in sh file $1"
 echo $DEV_HUB_URLlocal
 echo "2"
 echo "3"
@@ -20,22 +20,7 @@ if [ -z $DEV_HUB_URLlocal ]; then
 fi
 
 
-echo "Creating scratch ORG..."
-execute sfdx force:org:create -a $SCRATCH_ORG_ALIAS -s -f ./config/project-scratch-def.json -d 7
 
-sfdx force:org:list --all
-
-echo "Pushing changes to scratch org..."
-execute sfdx force:source:push
-
-# echo "Assigning permission"
-# execute sfdx force:user:permset:assign -n {Permission Set}
-
-echo "Make sure Org user is english"
-sfdx force:data:record:update -s User -w "Name='User User'" -v "Languagelocalekey=en_US"
-
-echo "Running apex tests..."
-execute sfdx force:apex:test:run -l RunLocalTests -w 30
 
 # if [ -f "package.json" ]; then
 #   echo "Running jest tests"
