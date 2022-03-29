@@ -11,7 +11,7 @@ echo "3"
 echo $SCRATCH_ORG_ALIAS
 echo "4"
 
-if[ "$1" = "true" ]; then
+if [ "$1" = "true" ]; then
   echo "Deleting Scratch Org after Usage"
   sfdx force:org:delete -p -u $SCRATCH_ORG_ALIAS
 else
