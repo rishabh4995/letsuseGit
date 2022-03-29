@@ -36,5 +36,5 @@ jobs:
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
               chmod +x ./scripts/config.sh
-              chmod +x ./scripts/CreateScratchOrg.sh 
-              ./scripts/CreateScratchOrg.sh
+              chmod +x ./scripts/CreateScratchOrg.sh
+              ./scripts/CreateScratchOrg.sh false
