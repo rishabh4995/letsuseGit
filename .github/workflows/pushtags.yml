@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: createPackage
+name: Create Package Version
 
 # Controls when the workflow will run
 on:
@@ -21,14 +21,15 @@ jobs:
   Create-package-version:
       runs-on: ubuntu-latest
       container : salesforce/salesforcedx:latest-full
-      defaults:
-        run:
-          shell: bash
       steps:
+        - name: Checkout
         - uses: actions/checkout@v2
-        - run: | 
+        - name: Authorize Dev Hub
+        - run: |
               echo $DEV_HUB_URL > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
+        - name: Create Package
+        - run: | 
               chmod +x ./scripts/createPackage.sh
               ./scripts/createPackage.sh
