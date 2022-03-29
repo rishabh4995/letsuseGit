@@ -24,18 +24,16 @@ jobs:
   deploy-org:
     runs-on: ubuntu-latest
     container : salesforce/salesforcedx:latest-full
-    defaults:
-      run:
-        shell: bash
     steps:
+        - name: Checkout
         - uses: actions/checkout@v2
-        - run: | 
+        - name: Authorize Dev Hub
+        - run: |
               echo $DEV_HUB_URLlocal > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
-              echo 1
-              echo $pwd
-              echo 2
+        - name: trigger build
+        - run: | 
               chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh
               ./scripts/CreateScratchOrg.sh
