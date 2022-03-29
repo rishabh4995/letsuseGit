@@ -37,5 +37,5 @@ jobs:
               rm devHubURLFile
               chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh
-              ./scripts/CreateScratchOrg.sh true
+              ./scripts/CreateScratchOrg.sh false
               ./scripts/CreateScratchOrg.sh true
