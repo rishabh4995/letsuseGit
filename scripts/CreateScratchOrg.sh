@@ -3,6 +3,7 @@ source `dirname $0`/config.sh
 execute() {
   $@ || exit
 }
+echo "===> $1"
 echo "1 in sh file"
 echo $DEV_HUB_URL
 echo "2"
