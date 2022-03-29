@@ -35,9 +35,7 @@ jobs:
               echo $DEV_HUB_URLlocal > devHubURLFile
               sfdx force:auth:sfdxurl:store -d -f devHubURLFile
               rm devHubURLFile
-              deleteorcreate= true
               chmod +x ./scripts/config.sh
               chmod +x ./scripts/CreateScratchOrg.sh
-              ./scripts/CreateScratchOrg.sh ${deleteorcreate}
-              deleteorcreate = true
-              ./scripts/CreateScratchOrg.sh ${deleteorcreate}
+              ./scripts/CreateScratchOrg.sh true
+              ./scripts/CreateScratchOrg.sh true
