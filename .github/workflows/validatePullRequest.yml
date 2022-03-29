@@ -23,7 +23,7 @@ env:
 jobs:
   deploy-org:
     runs-on: ubuntu-latest
-    container : salesforce/salesforcedx:latest
+    container : salesforce/salesforcedx:latest-slim
     steps:
         - name: Checkout
           uses: actions/checkout@v2
