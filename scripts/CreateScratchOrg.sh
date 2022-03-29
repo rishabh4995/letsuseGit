@@ -5,13 +5,13 @@ execute() {
 }
 
 echo "1 in sh file"
-echo $DEV_HUB_URL
+echo $DEV_HUB_URLlocal
 echo "2"
 echo "3"
 echo $SCRATCH_ORG_ALIAS
 echo "4"
 
-if [ -z $DEV_HUB_URL ]; then
+if [ -z $DEV_HUB_URLlocal ]; then
   echo "set default devhub user"
   execute sfdx force:config:set defaultdevhubusername=$DEV_HUB_ALIAS
 
