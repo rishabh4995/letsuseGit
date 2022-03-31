@@ -5,7 +5,11 @@
       "default": true
     }
   ],
+<<<<<<< HEAD
   "name": "githubActionsAssign",
+=======
+  "name": "gitAssignment2",
+>>>>>>> e424310c0859f278f540890008c1fa7992429b50
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "54.0"

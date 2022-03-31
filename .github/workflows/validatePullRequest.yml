@@ -1,0 +1,42 @@
+
+
+name:  deployToScratchOrg
+# Controls when the workflow will run
+
+on:
+  # Triggers the workflow on pull request events but only for the main branch
+  workflow_dispatch:
+  
+  pull_request:
+    branches: 
+      - main
+      - 'feature/*'
+      - 'bugfix/*'
+      
+env:
+  DEV_HUB_URLlocal: ${{ secrets.DEV_HUB_URL }}
+
+  # Allows you to run this workflow manually from the Actions tab
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
+jobs:
+  deploy-org:
+    runs-on: ubuntu-latest
+    container : salesforce/salesforcedx:latest-slim
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Authorize Dev Hub
+          run: |
+              echo $DEV_HUB_URLlocal > devHubURLFile
+              sfdx force:auth:sfdxurl:store -d -f devHubURLFile
+              rm devHubURLFile
+        - name: trigger build
+          run: |
+              chmod +x ./scripts/config.sh
+              chmod +x ./scripts/CreateScratchOrg.sh
+              ./scripts/CreateScratchOrg.sh false
+        - name: Mark scratch org for deletion after usage
+          run: |
+              ./scripts/CreateScratchOrg.sh true

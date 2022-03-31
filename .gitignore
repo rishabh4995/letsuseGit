@@ -37,4 +37,10 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 # Local environment variables
+<<<<<<< HEAD
 .env
+=======
+.env
+.husky/
+.vscode/
+>>>>>>> e424310c0859f278f540890008c1fa7992429b50
